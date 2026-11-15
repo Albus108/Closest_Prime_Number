@@ -1,93 +1,72 @@
-# Closest Prime Function
+# Closest Prime Number Finder
 
-A Python program that determines whether an integer is prime and, if it isn't, finds the closest prime number(s) to it.
+A program that determines whether a given integer is prime. If it isn't, the program finds the closest prime number or numbers to it.
+
+Currently implemented in **Python** and **C++**.
 
 ## Features
 
-- **Prime Detection:** Determines whether a given integer is prime.
-- **Square Root Optimization:** Uses the square root of the input as the upper limit for divisor checking.
-- **Odd Divisor Optimization:** Skips even divisors to reduce unnecessary iterations.
-- **Bidirectional Search:** Searches both upwards and downwards to find the closest prime numbers.
-- **Tie Detection:** Identifies when two prime numbers are equally close to the input.
-- **Edge Case Handling:** Accounts for cases involving the smallest prime number, 2.
+- **Prime Detection:** Checks whether an integer is prime.
+- **Square Root Optimization:** Limits divisor checks to the square root of the input.
+- **Odd Divisor Optimization:** Skips even divisors to reduce unnecessary calculations.
+- **Bidirectional Search:** Searches both above and below the input to find the closest prime.
+- **Tie Detection:** Identifies when two prime numbers are equally close.
+- **Edge Case Handling:** Handles cases involving the smallest prime number, 2.
+
+## Implementations
+
+| File | Language | Description |
+|---|---|---|
+| `closest prime function.py` | Python | Original implementation |
+| `closest-prime.cpp` | C++ | C++ implementation of the same algorithm |
 
 ## How It Works
 
-### 1. Prime Checking
+1. The program takes an integer as input.
+2. It checks whether the number is prime.
+3. If it is prime, the program reports it.
+4. Otherwise, it searches for prime numbers above and below the input.
+5. It compares their distances from the input.
+6. It displays the closest prime number or both numbers if there is a tie.
 
-The `P(n)` function checks whether an integer is prime.
+## Running the Programs
 
-It:
-1. Rejects numbers smaller than 2.
-2. Handles 2 as a special case.
-3. Eliminates even numbers.
-4. Checks only odd divisors up to the square root of the input.
+### Python
 
-### 2. Closest Prime Search
+Make sure Python is installed, then run:
 
-If the input is not prime, the program searches in both directions.
-
-- For even inputs, it starts at `x + 1` and `x - 1`.
-- For odd inputs, it starts at `x + 2` and `x - 2`.
-- It skips even candidates by incrementing or decrementing by 2.
-- It compares the distances to determine the closest prime number(s).
-
-### 3. Result Comparison
-
-The program compares the distances between the input and the nearest prime candidates.
-
-- If the upper prime is closer, it prints the upper prime.
-- If the lower prime is closer, it prints the lower prime.
-- If both are equally distant, it prints both.
-
-## Example
-
-**Input:**
-```text
-x: 10
-```
-
-**Output:**
-```text
-Closest prime number to 10 is 11
-```
-
-Another example:
-
-**Input:**
-```text
-x: 4
-```
-
-**Output:**
-```text
-Closest prime numbers to 4 are 5 and 3
-```
-
-## Requirements
-
-- Python 3.x
-- No external libraries required.
-
-## How to Run
-
-1. Clone this repository:
 ```bash
-git clone <repository-url>
+python "closest prime function.py"
 ```
 
-2. Navigate to the project directory.
+### C++
 
-3. Run the Python file:
+Compile using a C++ compiler such as g++:
+
 ```bash
-python closest_prime.py
+g++ closest-prime.cpp -o closest-prime
 ```
 
-4. Enter an integer when prompted.
+Then run:
+
+```bash
+./closest-prime
+```
+
+On Windows, run:
+
+```bash
+closest-prime.exe
+```
 
 ## Future Improvements
 
-- Implement the **6k ± 1 optimization** for faster primality testing.
-- Improve performance for extremely large integers.
-- Benchmark different primality-testing algorithms.
-- Explore more advanced prime-search techniques.
+- Improve efficiency for very large integers.
+- Explore more advanced prime-search algorithms.
+- Refactor the program into smaller, reusable functions.
+- Compare the performance of the Python and C++ implementations.
+
+## Author
+
+**Albus108**
+
