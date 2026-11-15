@@ -28,17 +28,14 @@ else:
     a=abs(x-y)
     while z>=2 and not P(z):
         z=z-2
-    if z==1:
-        z=2
     if z<2:
             b=float("inf")
     else:
             b=abs(x-z)
 
-
     if a<b:
-        print("Closest prime number to ",x,"is",y)
+        print(f"Closest prime number to {x} is {y}")
     elif a==b:
-        print("Closest prime numbers to ",x,"are",y,"and",z)
+        print(f"Closest prime numbers to {x} are {y} and {z}")
     else:
-        print("Closest prime number to ",x,"is",z)
+        print(f"Closest prime number to {x} is {z}")
